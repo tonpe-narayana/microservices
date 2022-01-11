@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: DEPARTMENT
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: root
+    url: jdbc:h2:tcp://localhost/~/test
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: 'true'
+        show_sql: 'true'
+    hibernate:
+      ddl-auto: update
+
+
+server:
+  port: 9001
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
