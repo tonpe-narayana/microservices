@@ -1,5 +1,4 @@
 package com.tonpe.user.service;
-
 import com.tonpe.user.entity.User;
 import com.tonpe.user.repo.UserRepository;
 import com.tonpe.user.vo.Department;
@@ -23,17 +22,13 @@ public class UserService {
 
         return userRepository.save(user);
     }
-
     public ResTemVo getUserWithDepartment(long userId) {
         log.info("inside getUserWithDepartment of of user service");
         ResTemVo vo = new ResTemVo();
         User user = userRepository.findByUserId(userId);
-
         Department department = restTemplate.getForObject("http://DEPARTMENT/departments/"+user.getDepartmentId(),Department.class);
         vo.setUser(user);
         vo.setDepartment(department);
         return  vo;
-
-
     }
 }

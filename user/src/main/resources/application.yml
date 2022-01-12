@@ -4,7 +4,7 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     username: root
-    url: jdbc:h2:tcp://localhost/~/test
+    url: jdbc:h2:~/test1
     password: root
   jpa:
     properties:
@@ -19,11 +19,3 @@ spring:
 server:
   port: 9002
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
